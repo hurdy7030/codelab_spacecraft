@@ -4,6 +4,8 @@ using Random = UnityEngine.Random;
 public class PowerBehaviour : MonoBehaviour
 {
     public float speed = 5.0f;
+    public float rotateSpeed = 5.0f;
+    public Transform PowerSpawn;
     
     public BoxCollider Spawn;   // HZ_CollA
     public BoxCollider Target;  // HZ_CollB
@@ -13,11 +15,13 @@ public class PowerBehaviour : MonoBehaviour
     void Start()
     {
         SetNewTarget(Target);
+        transform.position = PowerSpawn.position;
     }
 
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+        transform.Rotate(rotateSpeed * Time.deltaTime, 0, 0);
         
         Vector3 currentPos = transform.position;
         currentPos.x = 0;
@@ -35,6 +39,12 @@ public class PowerBehaviour : MonoBehaviour
         {
             SetNewTarget(Target);
             Debug.Log("To B");
+        }
+
+        if (other.name == "rocket")
+        {
+            Destroy(gameObject);
+            Debug.Log("PowerUP");
         }
     }
     

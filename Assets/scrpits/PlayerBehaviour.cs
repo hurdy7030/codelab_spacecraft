@@ -4,7 +4,11 @@ using UnityEngine.InputSystem;
 public class PlayerBehaviour : MonoBehaviour
 {
     public float moveSpeed = 4.0f;
+    private float basespeed = 4.0f;
     public Transform RespawnPoint;
+    public GameObject Powerprefab;
+    public Transform PowerSpawnPoint;
+   
     InputAction upButton;
     InputAction DownButton;
     InputAction RightButton;
@@ -15,6 +19,8 @@ public class PlayerBehaviour : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        basespeed = moveSpeed;
+        
         transform.position = RespawnPoint.position;
 
         upButton = InputSystem.actions.FindAction("Up");
@@ -59,12 +65,29 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 Debug.Log("Destination!");
                 transform.position = RespawnPoint.position;
+                moveSpeed = basespeed;
+                if (GameObject.Find("Power") == null)
+                {
+                    GameObject newPower = Instantiate(Powerprefab, PowerSpawnPoint.position, Quaternion.identity);
+                    newPower.name = "Power";
+                }
+                
+                
                 return;
             }
-            
+
+            if (other.name == "Power" || other.name.Contains("Power"))
+            {
+                Debug.Log("Power Up!");
+                moveSpeed *= 2;
+                return;
+            }
+
             GameFailed.Play();
             transform.position = RespawnPoint.position;
+            moveSpeed = basespeed;
             Debug.Log("Crashed!!");
+            
         }
     
 }

@@ -701,8 +701,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae88c37eabf613b49bba06f8fd61df51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBehaviour
-  moveSpeed: 20
+  moveSpeed: 30
   RespawnPoint: {fileID: 1866185878}
+  Powerprefab: {fileID: 1250937129}
+  PowerSpawnPoint: {fileID: 1238982761}
 --- !u!54 &564025650
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1248,6 +1250,37 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1238982760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1238982761}
+  m_Layer: 0
+  m_Name: PowerSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1238982761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238982760}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 152.4, z: 56.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1250937129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,6 +1293,8 @@ GameObject:
   - component: {fileID: 1250937132}
   - component: {fileID: 1250937131}
   - component: {fileID: 1250937130}
+  - component: {fileID: 1250937134}
+  - component: {fileID: 1250937135}
   m_Layer: 0
   m_Name: Power
   m_TagString: Untagged
@@ -1282,7 +1317,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1362,6 +1397,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1250937134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250937129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78240beb0e32250469e9ffc4be5450ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerBehaviour
+  speed: 20
+  rotateSpeed: 500
+  PowerSpawn: {fileID: 1238982761}
+  Spawn: {fileID: 1100789868}
+  Target: {fileID: 1998739335}
+--- !u!54 &1250937135
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250937129}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1351345565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1593,3 +1672,4 @@ SceneRoots:
   - {fileID: 1998739337}
   - {fileID: 47883589}
   - {fileID: 1250937133}
+  - {fileID: 1238982761}
