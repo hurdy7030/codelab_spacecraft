@@ -261,7 +261,7 @@ Transform:
   m_GameObject: {fileID: 185631220}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 150.9, z: 86.6}
+  m_LocalPosition: {x: 0, y: 145.9, z: 118.99999}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -610,7 +610,7 @@ Transform:
   m_GameObject: {fileID: 261903913}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 198.1, z: 83.4}
+  m_LocalPosition: {x: 0, y: 211.6, z: -44.3}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1186,7 +1186,7 @@ Transform:
   m_GameObject: {fileID: 450172035}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 141.9, z: 86.8}
+  m_LocalPosition: {x: 0, y: 179.2, z: -107.1}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1331,7 +1331,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBehaviour
   moveSpeed: 30
   RespawnPoint: {fileID: 1866185878}
-  Powerprefab: {fileID: 1250937129}
   PowerSpawnPoint: {fileID: 1238982761}
 --- !u!54 &564025650
 Rigidbody:
@@ -1510,7 +1509,7 @@ Transform:
   m_GameObject: {fileID: 611654110}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 128.6, z: 49.1}
+  m_LocalPosition: {x: 0, y: 163, z: -52.8}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1903,7 +1902,7 @@ Transform:
   m_GameObject: {fileID: 1238982760}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 152.4, z: 56.1}
+  m_LocalPosition: {x: 0, y: 168.3, z: 145.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -6,7 +6,7 @@ public class PlayerBehaviour : MonoBehaviour
     public float moveSpeed = 4.0f;
     private float basespeed = 4.0f;
     public Transform RespawnPoint;
-    public GameObject Powerprefab;
+    
     public Transform PowerSpawnPoint;
    
     InputAction upButton;
@@ -66,12 +66,12 @@ public class PlayerBehaviour : MonoBehaviour
                 Debug.Log("Destination!");
                 transform.position = RespawnPoint.position;
                 moveSpeed = basespeed;
-                if (GameObject.Find("Power") == null)
-                {
-                    GameObject newPower = Instantiate(Powerprefab, PowerSpawnPoint.position, Quaternion.identity);
-                    newPower.name = "Power";
-                }
                 
+                GameObject powerObj = GameObject.Find("Power");
+                
+                powerObj.GetComponent<MeshRenderer>().enabled = true;
+                powerObj.GetComponent<Collider>().enabled = true;
+                powerObj.transform.position = PowerSpawnPoint.position;
                 
                 return;
             }

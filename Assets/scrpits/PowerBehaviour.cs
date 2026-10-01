@@ -43,7 +43,9 @@ public class PowerBehaviour : MonoBehaviour
 
         if (other.name == "rocket")
         {
-            Destroy(gameObject);
+            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<Collider>().enabled = false;
+            
             Debug.Log("PowerUP");
         }
     }
