@@ -67,11 +67,7 @@ public class PlayerBehaviour : MonoBehaviour
                 transform.position = RespawnPoint.position;
                 moveSpeed = basespeed;
                 
-                GameObject powerObj = GameObject.Find("Power");
-                
-                powerObj.GetComponent<MeshRenderer>().enabled = true;
-                powerObj.GetComponent<Collider>().enabled = true;
-                powerObj.transform.position = PowerSpawnPoint.position;
+               
                 
                 return;
             }
@@ -87,6 +83,10 @@ public class PlayerBehaviour : MonoBehaviour
             transform.position = RespawnPoint.position;
             moveSpeed = basespeed;
             Debug.Log("Crashed!!");
+            GameObject powerObj = GameObject.Find("Power");
+            powerObj.GetComponent<MeshRenderer>().enabled = true;
+            powerObj.GetComponent<Collider>().enabled = true;
+            powerObj.transform.position = PowerSpawnPoint.position;
             
         }
     
