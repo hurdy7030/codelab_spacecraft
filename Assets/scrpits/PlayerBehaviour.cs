@@ -55,15 +55,13 @@ public class PlayerBehaviour : MonoBehaviour
 
         void OnTriggerEnter(Collider other)
         {
-            // 1. 碰到 Destination：只重置位置，跳出不放音效
             if (other.name == "Destination")
             {
                 Debug.Log("Destination!");
                 transform.position = RespawnPoint.position;
-                return; // 关键：直接跳出，后面的不执行
+                return;
             }
-
-            // 2. 碰到其他任何东西（Hazards等）：播放音乐 + 传送
+            
             GameFailed.Play();
             transform.position = RespawnPoint.position;
             Debug.Log("Crashed!!");

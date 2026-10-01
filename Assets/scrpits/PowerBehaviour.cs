@@ -1,7 +1,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class HazardSpawner : MonoBehaviour
+public class PowerBehaviour : MonoBehaviour
 {
     public float speed = 5.0f;
     
